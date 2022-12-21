@@ -1,8 +1,8 @@
 <script>
-	let className = '';
+	let className = ''
 
-	export { className as class };
-	export let type = '';
+	export { className as class }
+	export let type = ''
 </script>
 
 <button

@@ -1,7 +1,7 @@
 <script>
-	import { user } from '$lib/store/user';
+	import { user } from '$lib/store/user'
 
-	import Navigation from './Navigation.svelte';
+	import Navigation from './Navigation.svelte'
 </script>
 
 <div class="min-h-screen bg-gray-100">

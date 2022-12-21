@@ -1,8 +1,8 @@
 <script>
-	let className = '';
-	export { className as class };
-	export let active = false;
-	export let href = '';
+	let className = ''
+	export { className as class }
+	export let active = false
+	export let href = ''
 </script>
 
 <a

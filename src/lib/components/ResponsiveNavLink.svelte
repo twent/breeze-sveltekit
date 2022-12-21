@@ -1,6 +1,6 @@
 <script>
-	export let active = false;
-	export let href = '';
+	export let active = false
+	export let href = ''
 </script>
 
 <a

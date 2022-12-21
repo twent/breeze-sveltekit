@@ -1,7 +1,7 @@
 <script>
-	let className;
-	export let errors = [];
-	export { className as class };
+	let className
+	export let errors = []
+	export { className as class }
 </script>
 
 {#if errors.length > 0}

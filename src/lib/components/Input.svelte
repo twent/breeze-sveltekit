@@ -1,8 +1,8 @@
 <script>
-	let className;
-	export { className as class };
-	export let disabled = false;
-	export let value;
+	let className
+	export { className as class }
+	export let disabled = false
+	export let value
 </script>
 
 <input

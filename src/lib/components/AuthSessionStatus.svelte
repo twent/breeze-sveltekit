@@ -1,7 +1,7 @@
 <script>
-	let className;
-	export let status = null;
-	export { className as class };
+	let className
+	export let status = null
+	export { className as class }
 </script>
 
 {#if status}

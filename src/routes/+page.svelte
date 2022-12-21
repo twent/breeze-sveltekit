@@ -1,17 +1,17 @@
 <script context="module">
 	export async function load({ session }) {
-		const { authenticated } = session;
+		const { authenticated } = session
 
 		return {
 			props: {
 				authenticated
 			}
-		};
+		}
 	}
 </script>
 
 <script>
-	export let authenticated;
+	export let authenticated
 </script>
 
 <div

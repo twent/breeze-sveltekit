@@ -1,7 +1,7 @@
 <script>
-	import Button from './Button.svelte';
+	import Button from './Button.svelte'
 
-	export let open = false;
+	export let open = false
 </script>
 
 <div class="flex items-center justify-center p-12">

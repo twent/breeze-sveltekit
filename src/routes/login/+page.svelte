@@ -1,46 +1,46 @@
 <script context="module">
 	export async function load({ session }) {
-		const { authenticated } = session;
+		const { authenticated } = session
 
 		if (authenticated) {
 			return {
 				status: 302,
 				redirect: '/dashboard'
-			};
+			}
 		}
-		return {};
+		return {}
 	}
 </script>
 
 <script>
-	import { goto } from '$app/navigation';
-	import { authClient } from '$lib/axios';
-	import ApplicationLogo from '$lib/components/ApplicationLogo.svelte';
-	import AuthCard from '$lib/components/AuthCard.svelte';
-	import AuthSessionStatus from '$lib/components/AuthSessionStatus.svelte';
-	import AuthValidationErrors from '$lib/components/AuthValidationErrors.svelte';
-	import Button from '$lib/components/Button.svelte';
-	import Input from '$lib/components/Input.svelte';
-	import Label from '$lib/components/Label.svelte';
-	import GuestLayout from '$lib/components/layouts/GuestLayout.svelte';
-	import { user } from '$lib/store/user';
+	import { goto } from '$app/navigation'
+	import { authClient } from '$lib/axios'
+	import ApplicationLogo from '$lib/components/ApplicationLogo.svelte'
+	import AuthCard from '$lib/components/AuthCard.svelte'
+	import AuthSessionStatus from '$lib/components/AuthSessionStatus.svelte'
+	import AuthValidationErrors from '$lib/components/AuthValidationErrors.svelte'
+	import Button from '$lib/components/Button.svelte'
+	import Input from '$lib/components/Input.svelte'
+	import Label from '$lib/components/Label.svelte'
+	import GuestLayout from '$lib/components/layouts/GuestLayout.svelte'
+	import { user } from '$lib/store/user'
 
-	let email = '';
-	let password = '';
-	let status = null;
-	let errors = [];
+	let email = ''
+	let password = ''
+	let status = null
+	let errors = []
 
 	async function submitForm(event) {
-		const formData = new FormData();
-		formData.append('email', email);
-		formData.append('password', password);
+		const formData = new FormData()
+		formData.append('email', email)
+		formData.append('password', password)
 		const loginResponse = await authClient.post('/api/login', formData).catch((e) => {
-			console.log('LOGIN ERROR', e.response);
-			errors = e.response.data.errors;
-		});
-		user.set(loginResponse.data);
+			console.log('LOGIN ERROR', e.response)
+			errors = e.response.data.errors
+		})
+		user.set(loginResponse.data)
 		if (errors.length === 0) {
-			goto('/dashboard'); // Does not trigger hook
+			goto('/dashboard') // Does not trigger hook
 		}
 	}
 </script>

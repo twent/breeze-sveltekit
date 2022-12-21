@@ -1,37 +1,37 @@
 <script>
-	import { goto } from '$app/navigation';
+	import { goto } from '$app/navigation'
 
-	import { authClient } from '$lib/axios';
+	import { authClient } from '$lib/axios'
 
-	import ApplicationLogo from '$lib/components/ApplicationLogo.svelte';
+	import ApplicationLogo from '$lib/components/ApplicationLogo.svelte'
 
-	import AuthCard from '$lib/components/AuthCard.svelte';
-	import AuthValidationErrors from '$lib/components/AuthValidationErrors.svelte';
-	import Button from '$lib/components/Button.svelte';
-	import Input from '$lib/components/Input.svelte';
-	import Label from '$lib/components/Label.svelte';
-	import GuestLayout from '$lib/components/layouts/GuestLayout.svelte';
+	import AuthCard from '$lib/components/AuthCard.svelte'
+	import AuthValidationErrors from '$lib/components/AuthValidationErrors.svelte'
+	import Button from '$lib/components/Button.svelte'
+	import Input from '$lib/components/Input.svelte'
+	import Label from '$lib/components/Label.svelte'
+	import GuestLayout from '$lib/components/layouts/GuestLayout.svelte'
 
 	async function submitForm() {
-		const formData = new FormData();
-		formData.append('name', name);
-		formData.append('email', email);
-		formData.append('password', password);
-		formData.append('password_confirmation', password_confirmation);
+		const formData = new FormData()
+		formData.append('name', name)
+		formData.append('email', email)
+		formData.append('password', password)
+		formData.append('password_confirmation', password_confirmation)
 		const registerResponse = await authClient.post('/api/register', formData).catch((e) => {
-			console.log('REGISTER ERROR', e.response);
-			errors = e.response.data.errors;
-		});
+			console.log('REGISTER ERROR', e.response)
+			errors = e.response.data.errors
+		})
 		if (errors.length === 0) {
-			goto('/login');
+			goto('/login')
 		}
 	}
 
-	let name = '';
-	let email = '';
-	let password = '';
-	let password_confirmation = '';
-	let errors = [];
+	let name = ''
+	let email = ''
+	let password = ''
+	let password_confirmation = ''
+	let errors = []
 </script>
 
 <GuestLayout>

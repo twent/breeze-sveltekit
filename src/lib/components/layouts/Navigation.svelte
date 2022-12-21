@@ -1,22 +1,22 @@
 <script>
-	import { page } from '$app/stores';
-	import { authClient } from '$lib/axios';
-	import { user as userStore } from '$lib/store/user';
-	import ApplicationLogo from '../ApplicationLogo.svelte';
-	import Dropdown from '../Dropdown.svelte';
-	import NavLink from '../NavLink.svelte';
-	import ResponsiveNavButton from '../ResponsiveNavButton.svelte';
-	import ResponsiveNavLink from '../ResponsiveNavLink.svelte';
+	import { page } from '$app/stores'
+	import { authClient } from '$lib/axios'
+	import { user as userStore } from '$lib/store/user'
+	import ApplicationLogo from '../ApplicationLogo.svelte'
+	import Dropdown from '../Dropdown.svelte'
+	import NavLink from '../NavLink.svelte'
+	import ResponsiveNavButton from '../ResponsiveNavButton.svelte'
+	import ResponsiveNavLink from '../ResponsiveNavLink.svelte'
 
 	async function logout() {
-		await authClient.post('/api/logout');
-		userStore.set(null);
+		await authClient.post('/api/logout')
+		userStore.set(null)
 		// goto('/login')
-		window.location.href = '/login';
+		window.location.href = '/login'
 	}
 
-	let open = false;
-	export let user;
+	let open = false
+	export let user
 </script>
 
 <nav class="bg-white border-b border-gray-100">

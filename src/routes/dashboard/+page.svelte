@@ -1,5 +1,5 @@
 <script>
-	import AppLayout from '$lib/components/layouts/AppLayout.svelte';
+	import AppLayout from '$lib/components/layouts/AppLayout.svelte'
 </script>
 
 <svelte:head>
